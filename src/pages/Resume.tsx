@@ -1,4 +1,5 @@
 import { Briefcase, GraduationCap, Award, FileText, Download } from 'lucide-react';
+import { publicAsset } from '../utils/publicAsset';
 
 export default function Resume() {
   const experience = [
@@ -93,7 +94,7 @@ export default function Resume() {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Karel NIMPA-CV.pdf';
+    link.href = publicAsset('Karel NIMPA-CV.pdf');
     link.download = 'Karel NIMPA-CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -118,8 +119,7 @@ export default function Resume() {
                   alt="Karel NIMPA"
                   className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
                   onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = 'CV_photo.jpg'
+                    e.currentTarget.src = publicAsset('CV_photo.jpg');
                   }}
                 />
               </div>

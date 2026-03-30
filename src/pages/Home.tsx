@@ -1,6 +1,7 @@
 import { ArrowRight, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
+import { publicAsset } from '../utils/publicAsset';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -31,8 +32,7 @@ export default function Home({ onNavigate }: HomeProps) {
                   alt="Karel NIMPA"
                   className="w-full h-auto rounded-lg shadow-xl object-cover"
                   onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = 'Tour de Ville (88).jpg';
+                    e.currentTarget.src = publicAsset('Tour de Ville (88).jpg');
                   }}
                 />
               </div>
@@ -75,7 +75,7 @@ export default function Home({ onNavigate }: HomeProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6">
               <div className="inline-flex items-center justify-center mb-0.5">
-                <img src="Icons\Layer1.png" alt="GIS Analysis" className="w-16 h-16" />
+                <img src={publicAsset('Icons/Layer1.png')} alt="GIS Analysis" className="w-16 h-16" />
               </div>
               <h3 className="text-lg font-semibold mb-2">GIS Analysis</h3>
               <p className="text-sm text-gray-600">
@@ -84,7 +84,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
             <div className="text-center p-6">
               <div className="inline-flex items-center justify-center mb-0.5">
-                <img src="Icons\MNT.png" alt="Satellite" className="w-16 h-16" />
+                <img src={publicAsset('Icons/MNT.png')} alt="Satellite" className="w-16 h-16" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Remote Sensing</h3>
               <p className="text-sm text-gray-600">
@@ -93,7 +93,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
             <div className="text-center p-6">
               <div className="inline-flex items-center justify-center mb-0.5">
-                <img src="Icons\webApp.png" alt="Web Mapping" className="w-16 h-16" />
+                <img src={publicAsset('Icons/webApp.png')} alt="Web Mapping" className="w-16 h-16" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Web Mapping</h3>
               <p className="text-sm text-gray-600">
@@ -102,7 +102,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
             <div className="text-center p-6">
               <div className="inline-flex items-center justify-center mb-0.5">
-                <img src="Icons\pngegg (5).png" alt="Spatial Suitability" className="w-16 h-16" />
+                <img src={publicAsset('Icons/pngegg (5).png')} alt="Spatial Suitability" className="w-16 h-16" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Spatial Suitability </h3>
               <p className="text-sm text-gray-600">
