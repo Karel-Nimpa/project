@@ -1,4 +1,5 @@
 import { Project } from '../types';
+import { publicAsset } from '../utils/publicAsset';
 
 export const projects: Project[] = [
   // Trend analysis of NDVI data and syndrom approach of NDVI data for Europe (1982-2022)
@@ -8,12 +9,12 @@ export const projects: Project[] = [
     category: "GIS",
     description: "Seasonal Mann–Kendall NDVI trends, syndrome mapping, and lagged rainfall–biomass analysis for Europe (1982-2022).",
     tools: ["Rstudio", "QGIS"],
-    image: "/image/Europe.jpeg", 
+    image: publicAsset('image/Europe.jpeg'), 
     location: "Europe",
     coordinates: [51.1657, 10.4515],
     detailPage: "/data/ndvi-europe-1982-2022",
     downloadEnabled: false,
-    download: "/files/Portfolio_V3.pdf",
+    download: publicAsset('files/Portfolio_V3.pdf'),
     github: "https://github.com/karel94/GIS-with-R./blob/ac7f7cc1101113cb2ffefa56e8b713b265045f4f/Trend%20analysis%20of%20NDVI%20in%20Europe",
     contextAndIntroduction: `<p>Vegetation dynamics are a key indicator of ecosystem functioning and land-use change. In Europe,
      long-term trends in vegetation productivity reflect the combined influence of climate variability, land-use change, agricultural intensification, and environmental management policies.
@@ -38,7 +39,7 @@ export const projects: Project[] = [
      <p>A syndrome approach was used to group areas with similar combinations of NDVI trends and seasonal behavior. This allowed the identification of distinct 
      vegetation change patterns such as greening, browning, increasing or decreasing productivity, and changes in seasonality.</p>
     
-     <img src="/image/correlationLC.jpg" alt="correlation between NDVI and land-cover" /> 
+     <img src="${publicAsset('image/correlationLC.jpg')}" alt="correlation between NDVI and land-cover" /> 
      <p><b>4. Spatial analysis and mapping</b></p>
      <p>The resulting trend and syndrome classes were mapped and analyzed spatially to reveal regional patterns of vegetation change across Europe and their relationship with land-use characteristics.</p>
      <p>All analyses were conducted using R for time-series processing and statistical analysis, combined with GIS tools (QGIS) for spatial analysis and visualization.</p>`,
@@ -58,8 +59,8 @@ export const projects: Project[] = [
      trends or potential deterioration of vegetation health.
     </p>
      <div style="display: flex; gap: 1rem; margin: 1.5rem 0;">
-       <img src="/image/TAU_europe.jpg" alt="NDVI trends" style="flex: 1; max-width: 50%;" /> 
-       <img src="/image/Pvalue_europe.jpg" style="flex: 1; max-width: 50%;" /> 
+       <img src="${publicAsset('image/TAU_europe.jpg')}" alt="NDVI trends" style="flex: 1; max-width: 50%;" /> 
+       <img src="${publicAsset('image/Pvalue_europe.jpg')}" style="flex: 1; max-width: 50%;" /> 
      </div>
 
      <p>
@@ -78,14 +79,14 @@ export const projects: Project[] = [
     This observation indicates that the increase in NDVI between 1989 and 2022 was not very significant but confirms the hypothesis of greening trend 
     across Europe. Nevertheless, we note that some parts of Europe, especially the Northern part, show a negative change in NDVI between 0 and 10% loss. 
     </p>
-    <img src="/image/changeNDVI.jpg" />
+    <img src="${publicAsset('image/changeNDVI.jpg')}" />
      <p>
      By applying a syndrome approach, the study distinguishes multiple vegetation change patterns beyond simple greening or browning. 
      These syndromes capture differences in productivity levels, seasonal dynamics, and trend direction, revealing spatially coherent regions with 
      similar vegetation behavior.This classification highlights that areas with similar overall trends may still differ substantially in their 
      seasonality or productivity structure, emphasizing the importance of multi-dimensional analysis.
      </p>
-     <img src="/image/syndromtype.jpg" />
+     <img src="${publicAsset('image/syndromtype.jpg')}" />
      </p>
 
      <p>
@@ -101,7 +102,7 @@ export const projects: Project[] = [
      significant change. "Decreasing biomass", "Decreasing productivity", "Increasing irrigation", and "Decreasing irrigation" are the rarest syndromes 
      representing less than 2% of NDVI trend between 1982-2022, implying localized occurrences of these phenomena.
      </p>
-     <img src="/image/sydromproportionin NDVI.jpg" /> 
+     <img src="${publicAsset('image/sydromproportionin NDVI.jpg')}" /> 
      </ul>`,
     conclusion: `<p>
      This study reveals a predominant greening trend across Europe from 1982 to 2022, with increasing vegetation productivity, particularly during summer
@@ -123,7 +124,7 @@ export const projects: Project[] = [
     category: "Remote Sensing",
     description: "Analyse spatio-temporelle du dépérissement forestier à l’aide d’images Sentinel-2 et de données environnementales entre 2016 et 2022",
     tools: ["ArcGIS Desktop", "QGIS", "RStudio"],
-    image: "/image/poster.jpeg",
+    image: publicAsset('image/poster.jpeg'),
     location: "Fontainebleau, France",
     coordinates: [48.4123, 2.7011],
     detailPage: "/data/analyse-du-deperissement-au-sein-du-massif-forestier-de-fontainebleau-mff",
@@ -137,7 +138,7 @@ export const projects: Project[] = [
     methodology: `<p>L’étude repose sur une approche intégrée combinant télédétection et systèmes d’information géographique (SIG). Des images satellites Sentinel-2 acquises entre 2016 et 2022 ont été utilisées afin d’analyser l’évolution du couvert forestier. Après prétraitement (corrections radiométriques et atmosphériques), une classification supervisée par maximum de vraisemblance a été réalisée sous ArcGIS-Pro afin de distinguer différentes classes d’occupation du forèstiere (feuillus sains, feuillus dégradés, résineux sains, résineux dégradés et espaces ouverts).</p>
     <p>Les différentes classifications ont été évaluées à l'aide d'une matrice de confusion et validées à l'aide du coefficient Kappa de Cohen:</p>
     
-    <img src="/image/sentinel-02.jpg" alt="Bandes spectrales Sentinel-2" />
+    <img src="${publicAsset('image/sentinel-02.jpg')}" alt="Bandes spectrales Sentinel-2" />
   
     <p>L’identification du dépérissement s’est appuyée sur une analyse diachronique et une détection de changements entre 2016 et 2022. L’indice de végétation NDVI a été calculé afin d’évaluer l’activité photosynthétique, tandis que l’indice NDMI a permis d’estimer le stress hydrique des peuplements forestiers.</p>
   
@@ -145,25 +146,25 @@ export const projects: Project[] = [
   
     <p>Enfin, un modèle prédictif exploratoire a été développé sous QGIS à l’aide du plugin MOLUSCE. Basé sur un réseau neuronal artificiel, ce modèle a permis de simuler l’évolution potentielle du dépérissement à l’horizon 2028 en intégrant les variables biophysiques significatives.</p>
   
-    <img src="/image/molusce.jpg" alt="Modélisation MOLUSCE" />`,
+    <img src="${publicAsset('image/molusce.jpg')}" alt="Modélisation MOLUSCE" />`,
   
     keyFindings: `<ul>
     <p>Les résultats montrent une augmentation significative de la dégradation du massif forestier de Fontainebleau entre 2016 et 2022. Cette dégradation a progressé de <strong>20,2%</strong>, affectant à la fois les peuplements feuillus et résineux. Le dépérissement représente à lui seul <strong>81,3% de cette dégradation</strong>, soit environ <strong>16,4% de la superficie totale du massif</strong>.</p>
   
-    <img src="/image/Fontaine_change.jpg" alt="Cartographie du dépérissement" />
+    <img src="${publicAsset('image/Fontaine_change.jpg')}" alt="Cartographie du dépérissement" />
     
     <p>L’analyse spatiale met en évidence une distribution hétérogène du dépérissement, fortement liée aux caractéristiques environnementales. Les zones les plus affectées correspondent majoritairement à des secteurs présentant une faible réserve utile en eau et une forte contrainte hydrique.</p>
   
     <div style="display: flex; gap: 1rem; margin: 1.5rem 0;">
-      <img src="/image/NDVI_change.jpg" alt="NDVI évolution" style="flex: 1; max-width: 50%;" />
-      <img src="/image/Fontainebleau stressHyd.jpg" alt="NDMI stress hydrique" style="flex: 1; max-width: 50%;" />
+      <img src="${publicAsset('image/NDVI_change.jpg')}" alt="NDVI évolution" style="flex: 1; max-width: 50%;" />
+      <img src="${publicAsset('image/Fontainebleau stressHyd.jpg')}" alt="NDMI stress hydrique" style="flex: 1; max-width: 50%;" />
     </div>
   
     <p>Les analyses statistiques confirment que le dépérissement est fortement corrélé à plusieurs facteurs : le type de sol (notamment les sols sableux), le stress hydrique et la température. Ces résultats soulignent le rôle majeur du changement climatique dans la dynamique observée.</p>
   
     <p>La modélisation prospective réalisée avec MOLUSCE indique une tendance à l’aggravation du phénomène, avec une augmentation estimée de <strong>59,1% des surfaces en dépérissement à l’horizon 2028</strong>. Bien que ce modèle reste exploratoire, il met en évidence la nécessité d’une gestion forestière proactive.</p>
   
-    <img src="/image/deperissement_predit.jpg" alt="Projection du dépérissement" />
+    <img src="${publicAsset('image/deperissement_predit.jpg')}" alt="Projection du dépérissement" />
   
     </ul>`,
   
@@ -181,7 +182,7 @@ export const projects: Project[] = [
     category: "Remote Sensing",
     description: "Integrated remote sensing and field-based assessment of bark beetle-driven forest disturbance in Hunsrück-Hochwald National Park using Sentinel-2 imagery, machine learning, and ecological surveys",
     tools: ["SNAP","ArcGIS Pro"],
-    image: "/image/Hunsruck/poster.jpeg",
+    image: publicAsset('image/Hunsruck/poster.jpeg'),
     location: "Hunsrück-Hochwald National Park, Germany",
     coordinates: [49.7, 7.1],
     detailPage: "/data/forest-disturbance-monitoring-hunsruck-hochwald-national-park",
@@ -192,7 +193,7 @@ export const projects: Project[] = [
   
     <p>The Hunsrück-Hochwald National Park (HHNP), located in southwestern Germany, provides a relevant case study for investigating these dynamics. The park covers approximately 102 km² and is heavily forested, with a substantial proportion of conifer stands resulting from historical land use and forestry (plantation). Recent drought conditions and rising temperatures have increased the vulnerability of these forests, thereby amplifying bark beetle infestations and associated forest decline.</p>
     
-    <img src="/image/Hunsruck/Overview.jpg" alt="Hunsrück-Hochwald National Park overview" /> 
+    <img src="${publicAsset('image/Hunsruck/Overview.jpg')}" alt="Hunsrück-Hochwald National Park overview" /> 
 
     <p>This project aimed to analyse how bark beetle disturbance affects the forest ecosystem of HHNP by combining remote sensing and field observations. The study had three main objectives: first, to map forest and non-forest areas as a basis for disturbance analysis; second, to classify forest types in order to isolate coniferous stands; and third, to detect forest loss and assess the health status of coniferous trees through field surveys. The overall goal was to provide a spatially explicit and ecologically grounded assessment of disturbance patterns within the national park.</p>`,
   
@@ -230,30 +231,30 @@ export const projects: Project[] = [
     <p><strong>2. Validation of the forest / non-forest map.</strong></p>
     <p>The area-adjusted confusion matrix yielded an overall accuracy of <strong>85.60 ± 1.78%</strong>. The forest class showed strong accuracy values, with a producer’s accuracy of <strong>87.37 ± 1.38%</strong> and a user’s accuracy of <strong>95.81 ± 1.40%</strong>. In contrast, the non-forest class performed less well, with a producer’s accuracy of <strong>73.26 ± 7.20%</strong> and a user’s accuracy of <strong>45.33 ± 6.80%</strong>, indicating overestimation and higher uncertainty in this class.</p>
   
-    <img src="/image/Hunsruck/forest_non_forest.jpg" alt="Forest / Non-Forest map for HHNP" />
+    <img src="${publicAsset('image/Hunsruck/forest_non_forest.jpg')}" alt="Forest / Non-Forest map for HHNP" />
   
     <p><strong>3. Forest type classification and validation</strong></p>
     <p>The Random Forest models successfully separated deciduous and coniferous forests, with improved performance when topographic information was added. Case 1 (spectral bands only) achieved an overall accuracy of <strong>81.31 ± 2.73%</strong>, while case 2 (spectral bands + DEM) reached <strong>84.34 ± 2.52%</strong>. In both cases, the deciduous class performed better than the coniferous class, but the inclusion of DEM improved the producer’s accuracy of conifers from <strong>63.23 ± 4.84%</strong> to <strong>69.49 ± 5.16%</strong>.</p>
   
     <p>Adjusted area estimates further show that case 2 produced a slightly lower but more reliable conifer area estimate: <strong>66.05 ± 22.20 km²</strong>, compared with <strong>71.51 ± 23.99 km²</strong> in case 1. This suggests that topographic information improved the ecological realism of the forest type classification.</p>
   
-    <img src="/image/Hunsruck/Forest_type.jpg" alt="Forest type maps for HHNP, case 1 and case 2" />
+    <img src="${publicAsset('image/Hunsruck/Forest_type.jpg')}" alt="Forest type maps for HHNP, case 1 and case 2" />
   
     <p><strong>4. NDVI vs PVI sensitivity</strong></p>
     <p>The comparison of vegetation indices revealed that NDVI suffers from saturation around values of approximately 0.7, especially in deciduous forests under dense canopy conditions. By contrast, PVI remained responsive across the observed range and did not show a pseudo-plateau. This indicates that PVI is more sensitive than NDVI for detecting subtle vegetation changes in dense forest systems.</p>
   
-    <img src="/image/Hunsruck/NDVI_PVI_sensitivity.jpg" alt="Scatterplot comparing NDVI and PVI sensitivity" />
+    <img src="${publicAsset('image/Hunsruck/NDVI_PVI_sensitivity.jpg')}" alt="Scatterplot comparing NDVI and PVI sensitivity" />
   
     <p><strong>5. Spatial pattern of forest disturbance</strong></p>
     <p>The disturbance maps revealed canopy loss primarily in the <strong>southwestern and northeastern sectors</strong> of the park. Across both products, the “no change” class dominated, but the PVI-based map displayed more areas classified as “slight loss” than the NDVI-based map. Close-up visual comparison with Sentinel-2 true-colour composites confirmed that both products detected disturbance reasonably well, although some visually identifiable conifer stands were not fully captured due to classification uncertainties in the upstream conifer mask.</p>
   
-    <img src="/image/Hunsruck/Forest_loss.jpg" alt="Forest loss based on NDVI / PVI" />
+    <img src="${publicAsset('image/Hunsruck/Forest_loss.jpg')}" alt="Forest loss based on NDVI / PVI" />
     
   
     <p><strong>6. Field-based health assessment</strong></p>
     <p>A total of <strong>196 survey points</strong> were collected, including <strong>140 conifer observations</strong>. Among these conifer points, <strong>56</strong> were classified as dead standing trees, <strong>33</strong> as healthy, <strong>38</strong> as moderately damaged, and <strong>13</strong> as severely damaged. These observations indicate that dead and damaged conifers dominate the sampled areas, reflecting strong ecological impacts of bark beetle infestation.</p>
   
-    <img src="/image/Hunsruck/Forest_health.jpg" alt="Health status of conifer survey plots in HHNP" />
+    <img src="${publicAsset('image/Hunsruck/Forest_health.jpg')}" alt="Health status of conifer survey plots in HHNP" />
   
     <p><strong>7. Management zone comparison</strong></p> 
     <p>The sampled conifer points were distributed across the three park zones, with 35 points in zone 1a, 42 in zone 1b, and 61 in zone 2. Although dead standing trees represented around 45% of the observations in zones 1a and 2, the pairwise two-sided Fisher’s exact tests returned only non-significant p-values. Therefore, the null hypothesis of no relationship between conifer health status and park management zone could not be rejected.</p>
@@ -279,7 +280,7 @@ export const projects: Project[] = [
     category: "Remote Sensing",
     description: "Analyse spatio-temporelle des dynamiques du couvert forestier et des pressions anthropiques dans une aire protégée d’Afrique centrale à l’aide d’images Landsat, Sentinel-2 et d’enquêtes de terrain",
     tools: ["ArcGIS desktop", "MS Excel"],
-    image: "/image/PNMD/poster.jpg",
+    image: publicAsset('image/PNMD/poster.jpg'),
     location: "Parc National du Mbam et Djerem, Cameroun",
     coordinates: [5.96, 12.88],
     detailPage: "/data/impact-activites-anthropiques-pnmd",
@@ -288,7 +289,7 @@ export const projects: Project[] = [
   
     contextAndIntroduction: `<p>Le Parc National du Mbam et Djerem (PNMD), situé au centre du Cameroun, constitue une zone de transition écologique majeure entre les savanes soudaniennes et les forêts tropicales humides. Cette position confère au parc une richesse biologique exceptionnelle, mais également une forte vulnérabilité face aux pressions anthropiques croissantes.</p>
   
-    <img src="/image/PNMD/Location_PNMD.jpg" alt="Localisation du Parc National du Mbam et Djerem" />
+    <img src="${publicAsset('image/PNMD/Location_PNMD.jpg')}" alt="Localisation du Parc National du Mbam et Djerem" />
   
     <p>Depuis plusieurs décennies, les activités humaines telles que l’agriculture, la chasse, la pêche, la transhumance et l’exploitation du bois se sont intensifiées dans et autour du parc, modifiant profondément les structures paysagères et les dynamiques écologiques.</p>
   
@@ -309,12 +310,12 @@ export const projects: Project[] = [
   
     <p>Des enquêtes de terrain ont été menées auprès des populations locales selon un plan de sondage (proximite au parc) afin d’identifier les activités anthropiques dominantes et leur perception des changements environnementaux. Ces données ont permis de relier les observations satellitaires aux pratiques humaines.</p>
   
-    <img src="/image/PNMD/survey.jpg" alt="Enquêtes de terrain auprès des populations locales" />
+    <img src="${publicAsset('image/PNMD/survey.jpg')}" alt="Enquêtes de terrain auprès des populations locales" />
 
     <p><strong>3. Analyse de la faune</strong></p>
     <p>L’étude a également intégré des observations qualitatives sur la faune au moyen d'un Inventaire Faunique par transects. Il a notamment été question d'identifier les signes de presence de la faune (traces de pas, déjections, etc.) sur des transects predefinis, des signes de disparition de la faune, la modification des habitats et des corridors écologiques, afin d’évaluer les conséquences indirectes des changements du couvert forestier sur la faune. Cette analyse a été suivant le calcul d'indice kilometrique d'abondance de la faune (IKA).</p>
     <p>C'est une méthode permettant de mesurer une abondance relative des espèces le long d’une distance parcourue. Elle a été développée en 1958 par Ferry et Frochot et permet dans un milieu homogène, d’obtenir l’abondance par kilomètre pour chacune des espèces rencontrées.</p>
-    <img src="/image/PNMD/IKA.jpg" alt="Enquêtes de terrain auprès des populations locales" />
+    <img src="${publicAsset('image/PNMD/IKA.jpg')}" alt="Enquêtes de terrain auprès des populations locales" />
     <p>Les résultats de l'IKA ont été analysés pour identifier les espèces les plus affectées par les changements du couvert forestier. Les espèces les plus fréquentes ont été identifiées et les changements d'abondance ont été quantifiés grace au cartes d'interpolation des IKA.</p>`,
   
     
@@ -323,14 +324,14 @@ export const projects: Project[] = [
     <p><strong>1. Dynamique globale du couvert forestier.</strong></p>
     <p>Les résultats montrent une augmentation globale du couvert forestier d’environ <strong>12%</strong> entre 2000 et 2020. Toutefois, cette évolution masque une transformation structurelle importante du paysage.</p>
   
-    <img src="/image/PNMD/pnmd_change_map.jpg" alt="Carte des changements du couvert forestier" />
+    <img src="${publicAsset('image/PNMD/pnmd_change_map.jpg')}" alt="Carte des changements du couvert forestier" />
   
     <p>Malgré l’augmentation globale, les forêts denses ont diminué à un rythme moyen de <strong> 0,36% par an</strong>, au profit de formations forestières dégradées et de zones ouvertes. Cette tendance traduit une dégradation qualitative plutôt qu’une déforestation nette.</p>
-    <img src="/image/PNMD/change_stat.jpg" alt="Carte des changements du couvert forestier" />
+    <img src="${publicAsset('image/PNMD/change_stat.jpg')}" alt="Carte des changements du couvert forestier" />
 
     <p>Les pertes forestières sont spatialement concentrées, notamment dans la périphérie est du parc, où l’expansion agricole est la plus marquée.</p>
   
-    <img src="/image/PNMD/change_detect.jpg" alt="detection des changements du couvert forestier" />
+    <img src="${publicAsset('image/PNMD/change_detect.jpg')}" alt="detection des changements du couvert forestier" />
     
   
     <p><strong>2. Identification des facteurs anthropiques.</strong></p>
@@ -338,15 +339,15 @@ export const projects: Project[] = [
 
     <p>Les modifications du couvert forestier observées à partir des analyses spatiales se traduisent par une <strong>fragmentation accrue des habitats</strong>, entraînant une reconfiguration des aires de distribution de la faune et une augmentation des pressions sur certaines espèces. Ces dynamiques favorisent une perturbation des corridors écologiques et peuvent compromettre la viabilité à long terme des populations animales.</p>
 
-    <img src="/image/PNMD/chasse.jpg" alt="especes chassées" />
+    <img src="${publicAsset('image/PNMD/chasse.jpg')}" alt="especes chassées" />
 
     <p>Les données issues des enquêtes indiquent que les espèces les plus recherchées par les chasseurs sont principalement des ongulés et des espèces de taille moyenne à grande. Le sanglier et le potamochère sont chassés par <strong>52 % des chasseurs interrogés</strong>, suivis du hérisson (<strong>48 %</strong>) et du léopard (<strong>47 %</strong>). Par ailleurs, les registres de chasse mettent en évidence la pression exercée sur plusieurs espèces protégées, notamment le pangolin (<strong>28 %</strong> des chasseurs), les céphalophes à dos jaune (<strong>13 %</strong>), les bongos (<strong>3 %</strong>), les chimpanzés (<strong>2 %</strong>) et les buffles (<strong>1 %</strong>). Ces résultats témoignent d’une exploitation faunique étendue, incluant des espèces à forte valeur de conservation.</p>
 
-    <img src="/image/PNMD/IKA_analyse.jpg" alt="analyse des IKA des espèces" />
+    <img src="${publicAsset('image/PNMD/IKA_analyse.jpg')}" alt="analyse des IKA des espèces" />
 
     <p>L’analyse des indices kilométriques d’abondance (IKA) le long des transects montre que les traces de <strong>bushbuck</strong> sont les plus fréquentes, avec un IKA de <strong>1 ± 0,99</strong>, suivies par celles du céphalophe à rayures noires (<strong>0,917 ± 1,02</strong>). À l’inverse, plusieurs espèces présentent de faibles niveaux de détection, notamment le sitatunga, le céphalophe des buissons, le céphalophe bleu, le sanglier, le potamochère et le céphalophe à dos jaune, avec des valeurs d’IKA de <strong>0,083 ± 0,21</strong>. Ces résultats suggèrent soit une faible densité de ces espèces, soit une pression anthropique élevée limitant leur présence observable.</p>
 
-    <img src="/image/PNMD/interpolation.jpg" alt="analyse des IKA des espèces" />
+    <img src="${publicAsset('image/PNMD/interpolation.jpg')}" alt="analyse des IKA des espèces" />
 
     <p>L’analyse spatiale des observations indique que les espèces chassées et recensées le long des transects (sangliers, potamochères, céphalophes et autres espèces forestières) se concentrent principalement dans la <strong>partie orientale du parc et sa périphérie</strong>. En revanche, les indices de présence humaine et les zones de dégradation sont majoritairement localisés dans la <strong>périphérie occidentale</strong>. Cette distribution spatiale suggère un phénomène de déplacement de la faune vers des zones moins perturbées, probablement en réponse à une pression anthropique plus intense à l’ouest du parc.</p>
         
@@ -367,7 +368,7 @@ export const projects: Project[] = [
     category: "GIS",
     description: "Spatio-environmental modeling of vineyard suitability and wild boar damage risk using cost distance analysis and GIS-based simulation",
     tools: ["ArcGIS Pro"],
-    image: "/image/wildboars/poster.jpg",
+    image: publicAsset('image/wildboars/poster.jpg'),
     location: "Ruwer Valley, Germany",
     coordinates: [49.75, 6.75],
     detailPage: "/data/conflict-vineyards-wildboars-ruwer",
@@ -378,7 +379,7 @@ export const projects: Project[] = [
   
     <p>The Ruwer Valley, located in Rhineland-Palatinate (Germany), represents a typical socio-ecological system where vineyards, forests, and urban areas coexist. This spatial configuration promotes strong interactions between natural habitats and cultivated land, making vineyards especially vulnerable to wild boar incursions.</p>
   
-    <img src="/image/wildboars/Overview.jpg" alt="Study area location (Figure 1)" />
+    <img src="${publicAsset('image/wildboars/Overview.jpg')}" alt="Study area location (Figure 1)" />
   
     <p>The objective of this study is twofold: (1) to identify environmentally suitable areas for vineyard establishment, and (2) to assess the spatial risk of wild boar damage using a GIS-based cost distance modeling approach. The underlying hypothesis is that certain vineyard areas may be abandoned due to increased pressure from wildlife.</p>`,
   
@@ -387,19 +388,19 @@ export const projects: Project[] = [
     <p><strong>1. Vineyard suitability modeling.</strong></p>
     <p>A suitability model was developed using a Digital Elevation Model (25 m resolution) to derive key topographic variables: slope, aspect, and elevation. Suitable areas were defined based on the following thresholds: slope between 10% and 25%, south-east to south-west orientation, and elevation below 260 m.</p>
   
-    <img src="/image/wildboars/solar.jpg" alt="solar radiation analysis" />
+    <img src="${publicAsset('image/wildboars/solar.jpg')}" alt="solar radiation analysis" />
     <p>Additionally, a solar radiation analysis (direct and diffuse) was performed for the growing season (March–October). Areas receiving between 1800 and 2000 hours of sunlight were considered optimal for vineyard development.</p>
   
-    <img src="/image/wildboars/vineyard_model.jpg" alt="Vineyard suitability model (Figure 2)" />
+    <img src="${publicAsset('image/wildboars/vineyard_model.jpg')}" alt="Vineyard suitability model (Figure 2)" />
   
     <p>Forest habitats were extracted from the Corine Land Cover dataset and transformed into core forest areas using a negative buffer. The number of wild boars was estimated using a density of 0.05 individuals per hectare, and spatially simulated using random point generation to represent initial animal locations.</p>
   
-    <img src="/image/wildboars/boar_model.jpg" alt="Virtual boar model (Figure 3)" />
+    <img src="${publicAsset('image/wildboars/boar_model.jpg')}" alt="Virtual boar model (Figure 3)" />
   
     <p><strong>2. Cost surface construction and analysis .</strong></p>
     <p>A friction (cost) surface was created by combining three main variables: land cover (weight = 0.6), slope (0.25), and road network (0.15). Each variable was reclassified on a scale from 1 (low resistance) to 5 (high resistance), reflecting the likelihood of wild boar movement across different landscape features.</p>
   
-    <img src="/image/wildboars/cost_surface.jpg" alt="Cost surface (Figure 8)" />
+    <img src="${publicAsset('image/wildboars/cost_surface.jpg')}" alt="Cost surface (Figure 8)" />
   
     <p>The <i>cost distance</i> tool was applied to model optimal movement paths of wild boars toward vineyards. Vineyards were used as destination sources, ensuring that each simulated animal was connected to the nearest accessible vineyard via least-cost paths.</p>
   
@@ -410,13 +411,13 @@ export const projects: Project[] = [
     <p><strong>1. Spatial distribution of suitable vineyards.</strong></p> 
     <p>Suitable vineyard areas are predominantly located in the northern part of the study area, particularly in low-altitude valley zones. In contrast, southern areas show limited suitability due to higher elevation and steeper slopes.</p>
   
-    <img src="/image/wildboars/vineyards_map.jpg" alt="Vineyard distribution (Figure 5)" />
+    <img src="${publicAsset('image/wildboars/vineyards_map.jpg')}" alt="Vineyard distribution (Figure 5)" />
   
     <p>Most identified vineyards are relatively small (&lt; 2 ha), while only 15 parcels exceed 10 ha, with a maximum size of 30 ha. This fragmentation plays a key role in vulnerability to wildlife damage.</p>
  
     <p>Simulated wild boar populations are mainly concentrated in southern forested areas. Due to the scarcity of vineyards in this region, individuals tend to migrate toward central and northern vineyards, often over long distances.</p>
   
-    <img src="/image/wildboars/boar_paths.jpg" alt="Wild boar movement paths (Figure 6)" />
+    <img src="${publicAsset('image/wildboars/boar_paths.jpg')}" alt="Wild boar movement paths (Figure 6)" />
   
     <p><strong>2. Identification of high-risk areas.</strong></p> 
     <p>Vineyards located in the central part of the study area exhibit the highest risk levels, as they represent convergence zones for multiple wild boar movement paths. This results in increased competition and pressure on these agricultural areas.</p>
@@ -440,19 +441,19 @@ export const projects: Project[] = [
     category: "Web Mapping",
     description: "Design and implementation of an interactive Web GIS platform for visualization and management of forest areas in Cameroon using Leaflet, Turf.js, and GeoJSON",
     tools: ["JavaScript", "Leaflet.js", "Turf.js", "jQuery", "W3.CSS", "GeoJSON"],
-    image: "/image/GeoForest/poster.jpg",
+    image: publicAsset('image/GeoForest/poster.jpg'),
     location: "Cameroon",
     coordinates: [3.8667, 11.5167],
     detailPage: "/data/web-gis-geoforest-cameroon",
     downloadEnabled: true,
     download: "projectdoc/Karel_Nimpa_1734880_Geospatial_Applications.pdf",
-    video: "/image/GeoForest/Geoforest.mp4",
+    video: publicAsset('image/GeoForest/Geoforest.mp4'),
   
     contextAndIntroduction: `<p>The rapid evolution of web technologies has significantly transformed the way geospatial data is accessed, analyzed, and shared. Traditional desktop GIS systems, while powerful, require installation and are limited in accessibility. In contrast, Web GIS enables real-time visualization and interaction with spatial data directly through web browsers, making geospatial information accessible to a wider audience.</p>
   
     <p>Web GIS integrates geographic information systems with web-based architectures, allowing users to visualize, query, and analyze spatial data without requiring specialized software :contentReference[oaicite:0]{index=0}. This paradigm shift has become essential for decision-making in environmental management and land-use planning.</p>
   
-    <img src="/image/GeoForest/webgis_architecture2.jpg" alt="Web GIS architecture (client-server model)" />
+    <img src="${publicAsset('image/GeoForest/webgis_architecture2.jpg')}" alt="Web GIS architecture (client-server model)" />
   
     <p>In this context, the GeoForest Cameroon platform was developed as a Web GIS application designed to support forest management. The system enables visualization and exploration of different forest categories (protected areas, managed forests, hunting zones) and provides an interactive environment for accessing spatial information relevant to forest administration.</p>`,
   
@@ -461,15 +462,15 @@ export const projects: Project[] = [
     <p><strong>1. Web GIS architecture.</strong></p>
     <p>The system is based on a client–server model where the client (browser) interacts with a web server and a cartographic server. The cartographic server processes spatial data and returns map outputs (WMS/WFS or GeoJSON), while the database stores geospatial information.</p>
   
-    <img src="/image/GeoForest/webgis_architecture.jpg" alt="Web GIS architecture (client-server model)" />
+    <img src="${publicAsset('image/GeoForest/webgis_architecture.jpg')}" alt="Web GIS architecture (client-server model)" />
   
     <p>The user interface was developed using HTML, CSS (W3.CSS), and JavaScript. JavaScript handles interactivity through DOM manipulation, event handling (click, hover), and dynamic content rendering. jQuery and AJAX were used to load spatial data asynchronously without reloading the page.</p>
   
-    <img src="/image/GeoForest/frontend_structure.jpg" alt="Front-end structure (HTML, CSS, JS)" />
+    <img src="${publicAsset('image/GeoForest/frontend_structure.jpg')}" alt="Front-end structure (HTML, CSS, JS)" />
   
     <p> The interactive map was implemented using Leaflet.js, allowing visualization of multiple basemaps (OpenStreetMap, satellite, topographic). Turf.js was used for spatial operations such as masking selected regions and performing geometric processing.</p>
   
-    <img src="/image/GeoForest/leaflet_map.jpg" alt="Interactive map interface" />
+    <img src="${publicAsset('image/GeoForest/leaflet_map.jpg')}" alt="Interactive map interface" />
   
     <p>Spatial data were stored and managed using GeoJSON format, enabling efficient visualization and interaction in the browser. External GeoJSON files were dynamically loaded using AJAX requests.</p>
   
@@ -483,7 +484,7 @@ export const projects: Project[] = [
       <li>Dynamic legend updating according to active layers</li>
     </ul>
   
-    <img src="/image/GeoForest/layer_panel.jpg" alt="Layer management panel" />
+    <img src="${publicAsset('image/GeoForest/layer_panel.jpg')}" alt="Layer management panel" />
   
     <p>The application integrates interactive components such as clickable features, automatic zooming to selected regions, and embedded forms (contact and help forms) to enhance usability.</p>`,
   
@@ -491,13 +492,13 @@ export const projects: Project[] = [
   
     <p> The GeoForest system successfully demonstrates the implementation of a fully functional Web GIS platform capable of visualizing and managing forest data in real time.</p>
   
-    <img src="/image/GeoForest/geoforest_interface.jpg" alt="GeoForest interface" />
+    <img src="${publicAsset('image/GeoForest/geoforest_interface.jpg')}" alt="GeoForest interface" />
   
     <p> The use of Leaflet and GeoJSON enables fast and efficient rendering of spatial layers, even with multiple thematic datasets.</p>
   
     <p> The integration of AJAX and JavaScript allows seamless interaction without page reload, significantly improving user experience. Users can dynamically switch layers, query features, and explore spatial data.</p>
   
-    <img src="/image/GeoForest/popup_example.jpg" alt="Example of popup information" />
+    <img src="${publicAsset('image/GeoForest/popup_example.jpg')}" alt="Example of popup information" />
   
     <p> The masking functionality focuses the analysis on selected regions, improving readability and reducing visual complexity. The platform provides a clear overview of forest categories and their spatial distribution, supporting administrative decision-making processes.The modular architecture allows easy integration of additional datasets, functionalities, or analytical tools in future developments.</p>
   
@@ -518,7 +519,7 @@ export const projects: Project[] = [
     category: "Remote Sensing",
     description: "Advanced UAV-based workflow integrating photogrammetry and hyperspectral analysis to generate high-resolution terrain models and estimate crop nitrogen variability for precision fertilization",
     tools: ["Agisoft Metashape", "ENVI", "R", "QGIS"],
-    image: "/image/UAV/poster.jpg",
+    image: publicAsset('image/UAV/poster.jpg'),
     location: "Ruwer Valley (Germany) & Experimental Potato Field",
     coordinates: [49.75, 6.64],
     detailPage: "/data/uav-precision-agriculture",
@@ -570,7 +571,7 @@ export const projects: Project[] = [
       <li><strong>Orthomosaics</strong> → high-resolution mapping</li>
     </ul>
   
-    <img src="/image/UAV/point_cloud.jpg" alt="Dense point cloud" />
+    <img src="${publicAsset('image/UAV/point_cloud.jpg')}" alt="Dense point cloud" />
   
     <h3><strong>3. Hyperspectral UAV Analysis (Potato Field)</strong></h3>
   
@@ -585,7 +586,7 @@ export const projects: Project[] = [
   
     <p>Calibration was performed using <strong>Empirical Line Correction (ELC)</strong> with 9 reference panels measured by an ASD spectrometer.</p>
   
-    <img src="/image/UAV/calibration_plot.jpg" alt="Calibration accuracy" />
+    <img src="${publicAsset('image/UAV/calibration_plot.jpg')}" alt="Calibration accuracy" />
     <p>Accuracy assessment:</p>
     <ul>
       <li>Strict threshold: ≤ 2.3%</li>
@@ -603,10 +604,10 @@ export const projects: Project[] = [
   
     <p>Vegetation indices were computed using R:NDVI, NDRE, RDVI, WDVI, Red Edge Ratio:</p>
       
-    <img src="/image/UAV/VI.jpg" alt="Calibration accuracy" />
+    <img src="${publicAsset('image/UAV/VI.jpg')}" alt="Calibration accuracy" />
     <p>A vegetation mask (NDVI ≥ 0.6) was applied to isolate canopy pixels.</p>
 
-    <img src="/image/UAV/mask.jpg" alt="mask" />
+    <img src="${publicAsset('image/UAV/mask.jpg')}" alt="mask" />
   
     <p>Regression analysis linked spectral indices with field-measured nitrogen content.</p>`,
   
@@ -618,7 +619,7 @@ export const projects: Project[] = [
       <li>DSM successfully captured canopy variability and surface roughness</li>
     </ul>
   
-    <img src="/image/UAV/dem_dsm.jpg" alt="DEM vs DSM comparison" />
+    <img src="${publicAsset('image/UAV/dem_dsm.jpg')}" alt="DEM vs DSM comparison" />
   
     <h3>Radiometric Calibration</h3>
   
@@ -638,7 +639,7 @@ export const projects: Project[] = [
       <li>Model accuracy: RMSE = 97.58 kg/ha</li>
     </ul>
   
-    <img src="/image/UAV/nitrogen_regression.jpg" alt="Nitrogen regression model" />
+    <img src="${publicAsset('image/UAV/nitrogen_regression.jpg')}" alt="Nitrogen regression model" />
   
     <h3>Key Insight</h3>
   
@@ -653,7 +654,7 @@ export const projects: Project[] = [
       <li>High NDVI zones → minimal or no fertilization needed</li>
     </ul>
   
-    <img src="/image/UAV/nitrogen_map.jpg" alt="Nitrogen recommendation map" />
+    <img src="${publicAsset('image/UAV/nitrogen_map.jpg')}" alt="Nitrogen recommendation map" />
   
     <p>This enables:</p>
     <ul>
@@ -692,12 +693,11 @@ export const projects: Project[] = [
     description:
       "Academic poster project: land cover mapping with Google Earth Engine and QGIS in Luxembourg. The embedded PDF below contains the full narrative, methods, and figures.",
     tools: ["Google Earth Engine", "QGIS"],
-    image: "/image/LUXEMBOURG/lux.jpg",
+    image: publicAsset('image/LUXEMBOURG/lux.jpg'),
     location: "Luxembourg",
     coordinates: [49.6116, 6.1319],
     detailPage: "/data/land-cover-classification-luxembourg",
-    descriptionPdf:
-      "/image/LUXEMBOURG/poster-luxembourg.pdf",
+    descriptionPdf: publicAsset('image/LUXEMBOURG/poster-luxembourg.pdf'),
   },
 
   {
@@ -706,7 +706,7 @@ export const projects: Project[] = [
     category: "Remote Sensing",
     description: "A multi-temporal remote sensing analysis to quantify deforestation dynamics and anthropogenic pressure in the Dja-et-Lobo district (Cameroon) using Landsat time series and machine learning.",
     tools: ["FORCE", "R", "Google Earth Engine", "QGIS", "ArcGIS Pro", "Landsat 7/8/9"],
-    image: "/image/Mbam/mbam.jpg",
+    image: publicAsset('image/Mbam/mbam.jpg'),
     location: "Dja-et-Lobo District, Cameroon",
     coordinates: [2.8, 12.9],
     detailPage: "/data/quantifying-forest-disturbance-dja-et-lobo",
@@ -815,7 +815,7 @@ export const projects: Project[] = [
     category: "Web Mapping",
     description: "Raum Web Platform is a web-based platform for the analysis of spatial data. It is built with javascript, node.js, PostgreSQL, PostGIS, and QGIS.",
     tools: ["javascript", "node.js", "PostgreSQL", "PostGIS", "QGIS"],
-    image: "/image/Raum/raum.jpg",
+    image: publicAsset('image/Raum/raum.jpg'),
     location: "Raum",
     coordinates: [49.00937, 8.40444] //karlsruhe, Germany
   },
