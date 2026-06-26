@@ -11,7 +11,7 @@ export default function Portfolio() {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
   const markersLayerRef = useRef<L.LayerGroup | null>(null);
-  const categories = ['All', 'GIS', 'Remote Sensing', 'Web Mapping'];
+  const categories = ['All', 'GIS', 'Geostatistics', 'Remote Sensing', 'Web Mapping'];
 
   const filteredProjects =
     selectedCategory === 'All'

@@ -33,6 +33,24 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+.prose .figure-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.prose .figure-row img {
+  margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .prose .figure-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .prose ul {
   list-style-type: disc;
   padding-left: 1.5rem;

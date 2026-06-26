@@ -75,8 +75,8 @@ export default function Resume() {
       degree: 'Bachelor of Engineering in Environmental management',
       institution: 'University of Dschang - Dschang, Cameroon',
       period: '2018 - 2021',
-      focus: 'Focus: Conservation, polution and environmental impact assessment',
-      thesis: 'Thesis: Evaluation de l\'impact environnemental de l\'exploitation forestière dans l\'est du Cameroun : le cas de l\'unité de gestion forestière 10040 à Kongo'
+      focus: 'Focus: Wildlife Conservation and Forestry Management',
+      thesis: 'Thesis: Evaluation de l\'impact environnemental de l\'expansion agricole due Cacao et de l\'hevea sur les forets de la Zone Dja-Mintom'
     }
   ];
 
