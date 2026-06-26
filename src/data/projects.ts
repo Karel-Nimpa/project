@@ -442,7 +442,7 @@ export const projects: Project[] = [
     location: "Cameroon",
     coordinates: [3.8667, 11.5167],
     detailPage: "/data/web-gis-geoforest-cameroon",
-    downloadEnabled: true,
+    downloadEnabled: false,
     download: "projectdoc/Karel_Nimpa_1734880_Geospatial_Applications.pdf",
     video: publicAsset('image/GeoForest/Geoforest.mp4'),
   
@@ -988,13 +988,14 @@ export const projects: Project[] = [
     category: "Geostatistics",
     description:
       "Multi-part geospatial statistics study in Greater London combining point-pattern analysis of crime and urban venues, areal hotspot and clustering methods for cumulative impact zoning, and spatial regression plus geostatistical interpolation of PM2.5.",
-    tools: ["R", "spatstat"],
+    tools: ["R", "spatstat", "sf", "spdep", "gstat"],
     image: publicAsset('image/Geostat/geostat_violent_crime_kde.jpg'),
     location: "London, United Kingdom",
     coordinates: [51.5074, -0.1278],
     detailPage: "/data/spatial-analysis-crimes-urban-venues-london",
     downloadEnabled: false,
     download: "projectdoc/Geostatistics_London.docx",
+    github: "https://github.com/Karel-Nimpa/GIS-with-R./blob/main/Part%201-%20London%20Venue%20and%20crime%20analysis",
 
     contextAndIntroduction: `<p>This project examines spatial patterns in Greater London through three complementary geostatistical workflows. London comprises 32 boroughs and the City of London, divided into more than 600 administrative wards where population density, land use and socio-economic conditions vary strongly. These contrasts make the city a suitable setting for analysing how crime, urban venues and environmental exposure are distributed in space.</p>
 
@@ -1014,7 +1015,7 @@ export const projects: Project[] = [
 
     <p><strong>3. Relative risk analysis (density-adjusted proximity).</strong> Rather than measuring absolute distance, relative risk compares the proportion of crimes occurring within fixed buffers (50, 100, 200, 500 and 1,000 m) around real venue locations against the proportion around randomly generated venue locations with the same abundance. A relative risk above 1 means crimes are more concentrated near real venues than expected under complete spatial randomness; values below 1 indicate under-concentration.</p>
 
-    <p><strong>4. Kernel density estimation (KDE) with Z-score standardisation.</strong> Point events were converted into continuous density surfaces using Gaussian kernels. Bandwidth was selected by Diggle’s cross-validation (≈ 257 m) to preserve local detail. Each surface was Z-score standardised so that values ≥ 1 represent above-average concentrations. Hotspot overlap was then computed on a common grid by intersecting violent-crime hotspots (Z ≥ 1) with each venue-type hotspot, yielding the percentage of shared high-intensity area.</p>
+    <p><strong>4. Kernel density estimation (KDE) with Z-score standardisation.</strong> Point events were converted into continuous density surfaces using Gaussian kernels. For violent-crime KDE, two bandwidth selectors were compared: Diggle’s cross-validation (<code>bw.diggle</code>, ≈ 257 m) and the Paul-Victor plug-in rule (<code>bw.ppl</code>). The PPL bandwidth was retained because it yields a smoother, more interpretable city-wide hotspot surface; Diggle’s smaller bandwidth was noted as an alternative that preserves finer local detail. Each surface was Z-score standardised so that values ≥ 1 represent above-average concentrations. Hotspot overlap was then computed on a common grid by intersecting violent-crime hotspots (Z ≥ 1) with each venue-type hotspot, yielding the percentage of shared high-intensity area. Venue-type KDE surfaces used Diggle’s rule where stable, with PPL as fallback.</p>
 
     <p>The figure below shows the crime and venue categories retained for the cross-G-function analysis — anti-social behaviour, violent crime and other theft versus pubs, restaurants and cafés — selected because they represent both high-frequency crime types and common urban venue categories.</p>
 
@@ -1081,7 +1082,7 @@ export const projects: Project[] = [
 
     <p>Interpretation: violent crime is disproportionately concentrated near burger joints, fast food outlets and coffee shops at short distances, even after accounting for venue abundance. This contrasts with the cross-G-function and supports a localised attraction effect at neighbourhood scale.</p>
 
-    <p><strong>4. Kernel density estimation and hotspot overlap.</strong> KDE converts point events into continuous density surfaces; Z-score standardisation highlights areas where concentration exceeds the city-wide mean (Z ≥ 1 = hotspot). Bandwidth was set to ≈ 257 m (Diggle’s cross-validation) to retain local detail.</p>
+    <p><strong>4. Kernel density estimation and hotspot overlap.</strong> KDE converts point events into continuous density surfaces; Z-score standardisation highlights areas where concentration exceeds the city-wide mean (Z ≥ 1 = hotspot). For violent crime, both Diggle’s cross-validation (≈ 257 m) and the Paul-Victor plug-in rule (<code>bw.ppl</code>) were computed; the PPL bandwidth was applied in the final analysis to produce smoother, more interpretable hotspots for overlap assessment. The raw-density map subtitle reports the PPL bandwidth used in the script.</p>
 
     <p>The maps below show violent-crime density before and after Z-score standardisation. Raw density reveals a strong central London concentration; standardisation preserves this core while making above-average zones directly comparable across the city.</p>
 
